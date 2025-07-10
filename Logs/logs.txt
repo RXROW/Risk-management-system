@@ -1,0 +1,1041 @@
+2025-07-06 20:23:28.578 +03:00 [INF] Started database migrations...
+2025-07-06 20:23:28.583 +03:00 [INF] Migrating schema for host database...
+2025-07-07 18:20:04.617 +03:00 [INF] Started database migrations...
+2025-07-07 18:20:04.628 +03:00 [INF] Migrating schema for host database...
+2025-07-07 18:21:06.666 +03:00 [INF] Started database migrations...
+2025-07-07 18:21:06.697 +03:00 [INF] Migrating schema for host database...
+2025-07-07 18:24:33.015 +03:00 [INF] Started database migrations...
+2025-07-07 18:24:33.029 +03:00 [INF] Migrating schema for host database...
+2025-07-07 18:27:15.047 +03:00 [INF] [DEBUG] Loaded connection string: 
+2025-07-07 18:27:17.376 +03:00 [INF] Started database migrations...
+2025-07-07 18:27:17.381 +03:00 [INF] Migrating schema for host database...
+2025-07-07 18:30:41.593 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 18:30:43.308 +03:00 [INF] Started database migrations...
+2025-07-07 18:30:43.310 +03:00 [INF] Migrating schema for host database...
+2025-07-07 18:30:49.235 +03:00 [INF] Executing host database seed...
+2025-07-07 18:30:55.507 +03:00 [INF] Successfully completed host database migrations.
+2025-07-07 18:30:56.775 +03:00 [INF] Successfully completed all database migrations.
+2025-07-07 18:30:56.775 +03:00 [INF] You can safely end this process...
+2025-07-07 23:31:20.566 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 23:31:27.551 +03:00 [INF] Started database migrations...
+2025-07-07 23:31:27.555 +03:00 [INF] Migrating schema for host database...
+2025-07-07 23:31:29.151 +03:00 [INF] Executing host database seed...
+2025-07-07 23:31:30.896 +03:00 [INF] Successfully completed host database migrations.
+2025-07-07 23:31:31.417 +03:00 [INF] Successfully completed all database migrations.
+2025-07-07 23:31:31.418 +03:00 [INF] You can safely end this process...
+2025-07-07 23:40:52.700 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 23:40:53.733 +03:00 [INF] Started database migrations...
+2025-07-07 23:40:53.735 +03:00 [INF] Migrating schema for host database...
+2025-07-07 23:40:55.251 +03:00 [INF] Executing host database seed...
+2025-07-07 23:40:56.945 +03:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT_BIG(*)
+FROM [Categories] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+2025-07-07 23:40:56.959 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Categories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:1f2132e0-ad01-4e3d-9020-b0759d1fed0a
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Categories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:1f2132e0-ad01-4e3d-9020-b0759d1fed0a
+Error Number:208,State:1,Class:16
+2025-07-07 23:42:27.331 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 23:42:28.033 +03:00 [INF] Started database migrations...
+2025-07-07 23:42:28.035 +03:00 [INF] Migrating schema for host database...
+2025-07-07 23:42:29.232 +03:00 [INF] Executing host database seed...
+2025-07-07 23:42:30.885 +03:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT_BIG(*)
+FROM [Categories] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+2025-07-07 23:42:30.898 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Categories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:984cf933-77f4-4ee1-9592-49288debec31
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Categories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:984cf933-77f4-4ee1-9592-49288debec31
+Error Number:208,State:1,Class:16
+2025-07-07 23:42:58.183 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 23:42:58.901 +03:00 [INF] Started database migrations...
+2025-07-07 23:42:58.903 +03:00 [INF] Migrating schema for host database...
+2025-07-07 23:43:00.099 +03:00 [INF] Executing host database seed...
+2025-07-07 23:43:01.779 +03:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT_BIG(*)
+FROM [Categories] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+2025-07-07 23:43:01.793 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Categories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:09223e62-422f-4e1a-bd79-c3818930aebd
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Categories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:09223e62-422f-4e1a-bd79-c3818930aebd
+Error Number:208,State:1,Class:16
+2025-07-07 23:46:07.632 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 23:46:08.264 +03:00 [INF] Started database migrations...
+2025-07-07 23:46:08.265 +03:00 [INF] Migrating schema for host database...
+2025-07-07 23:46:09.279 +03:00 [INF] Executing host database seed...
+2025-07-07 23:46:10.608 +03:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT_BIG(*)
+FROM [Categories] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+2025-07-07 23:46:10.619 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Categories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:41fd84e0-6d07-4166-b8de-c1af86d530eb
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Categories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:41fd84e0-6d07-4166-b8de-c1af86d530eb
+Error Number:208,State:1,Class:16
+2025-07-07 23:48:02.678 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 23:48:03.368 +03:00 [INF] Started database migrations...
+2025-07-07 23:48:03.369 +03:00 [INF] Migrating schema for host database...
+2025-07-07 23:48:04.360 +03:00 [INF] Executing host database seed...
+2025-07-07 23:50:29.932 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 23:50:30.738 +03:00 [INF] Started database migrations...
+2025-07-07 23:50:30.740 +03:00 [INF] Migrating schema for host database...
+2025-07-07 23:50:32.156 +03:00 [INF] Executing host database seed...
+2025-07-07 23:59:37.307 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-07 23:59:38.142 +03:00 [INF] Started database migrations...
+2025-07-07 23:59:38.143 +03:00 [INF] Migrating schema for host database...
+2025-07-07 23:59:39.541 +03:00 [INF] Executing host database seed...
+2025-07-07 23:59:43.091 +03:00 [INF] Successfully completed host database migrations.
+2025-07-07 23:59:43.392 +03:00 [INF] Successfully completed all database migrations.
+2025-07-07 23:59:43.392 +03:00 [INF] You can safely end this process...
+2025-07-10 19:27:53.442 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 19:28:16.161 +03:00 [INF] Started database migrations...
+2025-07-10 19:28:16.163 +03:00 [INF] Migrating schema for host database...
+2025-07-10 19:28:18.725 +03:00 [INF] Executing host database seed...
+2025-07-10 19:28:22.214 +03:00 [ERR] Failed executing DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT_BIG(*)
+FROM [RiskCategories] AS [r]
+2025-07-10 19:28:22.236 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'RiskCategories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:19d86d5d-de7a-4cf6-9faa-3565944eaa81
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'RiskCategories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Volo.Abp.Domain.Repositories.EntityFrameworkCore.EfCoreRepository`2.GetCountAsync(CancellationToken cancellationToken)
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapterWithReturnValue`1.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+ClientConnectionId:19d86d5d-de7a-4cf6-9faa-3565944eaa81
+Error Number:208,State:1,Class:16
+2025-07-10 19:36:28.368 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 19:36:31.680 +03:00 [INF] Started database migrations...
+2025-07-10 19:36:31.682 +03:00 [INF] Migrating schema for host database...
+2025-07-10 19:36:33.015 +03:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RiskStages] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RiskStages] PRIMARY KEY ([Id])
+);
+2025-07-10 19:38:36.900 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 19:38:37.653 +03:00 [INF] Started database migrations...
+2025-07-10 19:38:37.655 +03:00 [INF] Migrating schema for host database...
+2025-07-10 19:38:38.762 +03:00 [INF] Executing host database seed...
+2025-07-10 19:38:40.980 +03:00 [ERR] Failed executing DbCommand (50ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RiskStages] ([Id], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+2025-07-10 19:38:41.179 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskStages' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:c7c441fb-e315-4acb-8131-2762d87e47d3
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskStages' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:c7c441fb-e315-4acb-8131-2762d87e47d3
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Volo.Abp.EntityFrameworkCore.AbpDbContext`1.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Volo.Abp.Domain.Repositories.EntityFrameworkCore.EfCoreRepository`2.InsertAsync(TEntity entity, Boolean autoSave, CancellationToken cancellationToken)
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapterWithReturnValue`1.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+   at Volo.Abp.Castle.DynamicProxy.CastleAsyncAbpInterceptorAdapter`1.InterceptAsync[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo, Func`3 proceed)
+   at MyApiApp.Data.RiskStageDataSeedContributor.SeedAsync(DataSeedContext context) in C:\Users\eslam\OneDrive\سطح المكتب\aspnet-core\src\MyApiApp.Domain\Data\RiskStageDataSeedContributor.cs:line 37
+   at Volo.Abp.Data.DataSeeder.SeedAsync(DataSeedContext context)
+2025-07-10 19:42:02.664 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 19:42:03.798 +03:00 [INF] Started database migrations...
+2025-07-10 19:42:03.800 +03:00 [INF] Migrating schema for host database...
+2025-07-10 19:42:04.854 +03:00 [INF] Executing host database seed...
+2025-07-10 19:42:06.321 +03:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT_BIG(*)
+FROM [RiskCategories] AS [r]
+2025-07-10 19:42:06.345 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'RiskCategories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:2b566362-1f1b-44d0-a1b1-332fb96daca0
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'RiskCategories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Volo.Abp.Domain.Repositories.EntityFrameworkCore.EfCoreRepository`2.GetCountAsync(CancellationToken cancellationToken)
+ClientConnectionId:2b566362-1f1b-44d0-a1b1-332fb96daca0
+Error Number:208,State:1,Class:16
+2025-07-10 19:42:35.231 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 19:42:35.929 +03:00 [INF] Started database migrations...
+2025-07-10 19:42:35.931 +03:00 [INF] Migrating schema for host database...
+2025-07-10 19:42:37.211 +03:00 [INF] Executing host database seed...
+2025-07-10 19:42:38.559 +03:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT_BIG(*)
+FROM [RiskCategories] AS [r]
+2025-07-10 19:42:38.571 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'RiskCategories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:6802e5b8-bc08-4d6d-88d0-787448b0af9e
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'RiskCategories'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Volo.Abp.Domain.Repositories.EntityFrameworkCore.EfCoreRepository`2.GetCountAsync(CancellationToken cancellationToken)
+ClientConnectionId:6802e5b8-bc08-4d6d-88d0-787448b0af9e
+Error Number:208,State:1,Class:16
+2025-07-10 19:45:08.566 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 19:45:09.217 +03:00 [INF] Started database migrations...
+2025-07-10 19:45:09.219 +03:00 [INF] Migrating schema for host database...
+2025-07-10 19:45:10.241 +03:00 [INF] Executing host database seed...
+2025-07-10 19:45:11.837 +03:00 [INF] Successfully completed host database migrations.
+2025-07-10 19:45:16.225 +03:00 [INF] Successfully completed all database migrations.
+2025-07-10 19:45:16.225 +03:00 [INF] You can safely end this process...
+2025-07-10 20:06:56.165 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 20:06:58.824 +03:00 [INF] Started database migrations...
+2025-07-10 20:06:58.826 +03:00 [INF] Migrating schema for host database...
+2025-07-10 20:07:00.497 +03:00 [INF] Executing host database seed...
+2025-07-10 20:07:03.865 +03:00 [ERR] Failed executing DbCommand (67ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RiskResponses] ([Id], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+2025-07-10 20:07:04.073 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskResponses' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:fd8d9701-74fc-49d8-8ab4-987f00d51589
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskResponses' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:fd8d9701-74fc-49d8-8ab4-987f00d51589
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-07-10 20:09:28.918 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 20:09:29.596 +03:00 [INF] Started database migrations...
+2025-07-10 20:09:29.598 +03:00 [INF] Migrating schema for host database...
+2025-07-10 20:09:30.998 +03:00 [INF] Executing host database seed...
+2025-07-10 20:09:32.852 +03:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RiskResponses] ([Id], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+2025-07-10 20:09:32.875 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskResponses' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:624ff60d-9c4a-4952-8bdf-4c812edaaed4
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskResponses' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:624ff60d-9c4a-4952-8bdf-4c812edaaed4
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-07-10 20:14:32.164 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 20:14:33.373 +03:00 [INF] Started database migrations...
+2025-07-10 20:14:33.375 +03:00 [INF] Migrating schema for host database...
+2025-07-10 20:14:34.518 +03:00 [INF] Executing host database seed...
+2025-07-10 20:14:35.974 +03:00 [ERR] Failed executing DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT_BIG(*)
+FROM [RiskResponses] AS [r]
+2025-07-10 20:14:35.988 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'RiskResponses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:1a90a21e-0fe8-46f6-8a48-1522eb535168
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'RiskResponses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Volo.Abp.Domain.Repositories.EntityFrameworkCore.EfCoreRepository`2.GetCountAsync(CancellationToken cancellationToken)
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapterWithReturnValue`1.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+ClientConnectionId:1a90a21e-0fe8-46f6-8a48-1522eb535168
+Error Number:208,State:1,Class:16
+2025-07-10 20:37:16.932 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_New;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 20:37:17.761 +03:00 [INF] Started database migrations...
+2025-07-10 20:37:17.763 +03:00 [INF] Migrating schema for host database...
+2025-07-10 20:37:20.180 +03:00 [ERR] Failed executing DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RiskCategories] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RiskCategories] PRIMARY KEY ([Id])
+);
+2025-07-10 20:39:27.787 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_New;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 20:39:28.437 +03:00 [INF] Started database migrations...
+2025-07-10 20:39:28.438 +03:00 [INF] Migrating schema for host database...
+2025-07-10 20:39:29.991 +03:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RiskCategories] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RiskCategories] PRIMARY KEY ([Id])
+);
+2025-07-10 21:12:18.337 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_New;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:12:19.016 +03:00 [INF] Started database migrations...
+2025-07-10 21:12:19.018 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:12:22.531 +03:00 [ERR] Failed executing DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RiskCategories] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RiskCategories] PRIMARY KEY ([Id])
+);
+2025-07-10 21:18:42.576 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_New;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:18:43.377 +03:00 [INF] Started database migrations...
+2025-07-10 21:18:43.379 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:18:45.505 +03:00 [ERR] Failed executing DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RiskCategories] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RiskCategories] PRIMARY KEY ([Id])
+);
+2025-07-10 21:25:47.968 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_FreshTest;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:25:48.750 +03:00 [INF] Started database migrations...
+2025-07-10 21:25:48.752 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:25:50.429 +03:00 [ERR] Failed executing DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RiskCategories] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RiskCategories] PRIMARY KEY ([Id])
+);
+2025-07-10 21:32:19.102 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_FreshTest;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:32:19.752 +03:00 [INF] Started database migrations...
+2025-07-10 21:32:19.754 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:32:22.460 +03:00 [ERR] Failed executing DbCommand (470ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RiskCategories] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RiskCategories] PRIMARY KEY ([Id])
+);
+2025-07-10 21:37:34.799 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_FreshTest;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:37:38.300 +03:00 [INF] Started database migrations...
+2025-07-10 21:37:38.302 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:37:40.482 +03:00 [ERR] Failed executing DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AbpAuditLogs] (
+    [Id] uniqueidentifier NOT NULL,
+    [ApplicationName] nvarchar(96) NULL,
+    [UserId] uniqueidentifier NULL,
+    [UserName] nvarchar(256) NULL,
+    [TenantId] uniqueidentifier NULL,
+    [TenantName] nvarchar(64) NULL,
+    [ImpersonatorUserId] uniqueidentifier NULL,
+    [ImpersonatorUserName] nvarchar(256) NULL,
+    [ImpersonatorTenantId] uniqueidentifier NULL,
+    [ImpersonatorTenantName] nvarchar(64) NULL,
+    [ExecutionTime] datetime2 NOT NULL,
+    [ExecutionDuration] int NOT NULL,
+    [ClientIpAddress] nvarchar(64) NULL,
+    [ClientName] nvarchar(128) NULL,
+    [ClientId] nvarchar(64) NULL,
+    [CorrelationId] nvarchar(64) NULL,
+    [BrowserInfo] nvarchar(512) NULL,
+    [HttpMethod] nvarchar(16) NULL,
+    [Url] nvarchar(256) NULL,
+    [Exceptions] nvarchar(max) NULL,
+    [Comments] nvarchar(256) NULL,
+    [HttpStatusCode] int NULL,
+    [ExtraProperties] nvarchar(max) NOT NULL,
+    [ConcurrencyStamp] nvarchar(40) NOT NULL,
+    CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY ([Id])
+);
+2025-07-10 21:38:40.387 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_FreshTest;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:38:41.025 +03:00 [INF] Started database migrations...
+2025-07-10 21:38:41.026 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:38:42.538 +03:00 [ERR] Failed executing DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AbpAuditLogs] (
+    [Id] uniqueidentifier NOT NULL,
+    [ApplicationName] nvarchar(96) NULL,
+    [UserId] uniqueidentifier NULL,
+    [UserName] nvarchar(256) NULL,
+    [TenantId] uniqueidentifier NULL,
+    [TenantName] nvarchar(64) NULL,
+    [ImpersonatorUserId] uniqueidentifier NULL,
+    [ImpersonatorUserName] nvarchar(256) NULL,
+    [ImpersonatorTenantId] uniqueidentifier NULL,
+    [ImpersonatorTenantName] nvarchar(64) NULL,
+    [ExecutionTime] datetime2 NOT NULL,
+    [ExecutionDuration] int NOT NULL,
+    [ClientIpAddress] nvarchar(64) NULL,
+    [ClientName] nvarchar(128) NULL,
+    [ClientId] nvarchar(64) NULL,
+    [CorrelationId] nvarchar(64) NULL,
+    [BrowserInfo] nvarchar(512) NULL,
+    [HttpMethod] nvarchar(16) NULL,
+    [Url] nvarchar(256) NULL,
+    [Exceptions] nvarchar(max) NULL,
+    [Comments] nvarchar(256) NULL,
+    [HttpStatusCode] int NULL,
+    [ExtraProperties] nvarchar(max) NOT NULL,
+    [ConcurrencyStamp] nvarchar(40) NOT NULL,
+    CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY ([Id])
+);
+2025-07-10 21:40:56.404 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_FreshTest;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:40:57.040 +03:00 [INF] Started database migrations...
+2025-07-10 21:40:57.041 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:40:58.668 +03:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AbpAuditLogs] (
+    [Id] uniqueidentifier NOT NULL,
+    [ApplicationName] nvarchar(96) NULL,
+    [UserId] uniqueidentifier NULL,
+    [UserName] nvarchar(256) NULL,
+    [TenantId] uniqueidentifier NULL,
+    [TenantName] nvarchar(64) NULL,
+    [ImpersonatorUserId] uniqueidentifier NULL,
+    [ImpersonatorUserName] nvarchar(256) NULL,
+    [ImpersonatorTenantId] uniqueidentifier NULL,
+    [ImpersonatorTenantName] nvarchar(64) NULL,
+    [ExecutionTime] datetime2 NOT NULL,
+    [ExecutionDuration] int NOT NULL,
+    [ClientIpAddress] nvarchar(64) NULL,
+    [ClientName] nvarchar(128) NULL,
+    [ClientId] nvarchar(64) NULL,
+    [CorrelationId] nvarchar(64) NULL,
+    [BrowserInfo] nvarchar(512) NULL,
+    [HttpMethod] nvarchar(16) NULL,
+    [Url] nvarchar(256) NULL,
+    [Exceptions] nvarchar(max) NULL,
+    [Comments] nvarchar(256) NULL,
+    [HttpStatusCode] int NULL,
+    [ExtraProperties] nvarchar(max) NOT NULL,
+    [ConcurrencyStamp] nvarchar(40) NOT NULL,
+    CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY ([Id])
+);
+2025-07-10 21:44:00.317 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb_FreshTest;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:44:00.966 +03:00 [INF] Started database migrations...
+2025-07-10 21:44:00.968 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:44:02.651 +03:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AbpAuditLogs] (
+    [Id] uniqueidentifier NOT NULL,
+    [ApplicationName] nvarchar(96) NULL,
+    [UserId] uniqueidentifier NULL,
+    [UserName] nvarchar(256) NULL,
+    [TenantId] uniqueidentifier NULL,
+    [TenantName] nvarchar(64) NULL,
+    [ImpersonatorUserId] uniqueidentifier NULL,
+    [ImpersonatorUserName] nvarchar(256) NULL,
+    [ImpersonatorTenantId] uniqueidentifier NULL,
+    [ImpersonatorTenantName] nvarchar(64) NULL,
+    [ExecutionTime] datetime2 NOT NULL,
+    [ExecutionDuration] int NOT NULL,
+    [ClientIpAddress] nvarchar(64) NULL,
+    [ClientName] nvarchar(128) NULL,
+    [ClientId] nvarchar(64) NULL,
+    [CorrelationId] nvarchar(64) NULL,
+    [BrowserInfo] nvarchar(512) NULL,
+    [HttpMethod] nvarchar(16) NULL,
+    [Url] nvarchar(256) NULL,
+    [Exceptions] nvarchar(max) NULL,
+    [Comments] nvarchar(256) NULL,
+    [HttpStatusCode] int NULL,
+    [ExtraProperties] nvarchar(max) NOT NULL,
+    [ConcurrencyStamp] nvarchar(40) NOT NULL,
+    CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY ([Id])
+);
+2025-07-10 21:50:18.381 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:50:19.033 +03:00 [INF] Started database migrations...
+2025-07-10 21:50:19.035 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:50:20.943 +03:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AbpAuditLogs] (
+    [Id] uniqueidentifier NOT NULL,
+    [ApplicationName] nvarchar(96) NULL,
+    [UserId] uniqueidentifier NULL,
+    [UserName] nvarchar(256) NULL,
+    [TenantId] uniqueidentifier NULL,
+    [TenantName] nvarchar(64) NULL,
+    [ImpersonatorUserId] uniqueidentifier NULL,
+    [ImpersonatorUserName] nvarchar(256) NULL,
+    [ImpersonatorTenantId] uniqueidentifier NULL,
+    [ImpersonatorTenantName] nvarchar(64) NULL,
+    [ExecutionTime] datetime2 NOT NULL,
+    [ExecutionDuration] int NOT NULL,
+    [ClientIpAddress] nvarchar(64) NULL,
+    [ClientName] nvarchar(128) NULL,
+    [ClientId] nvarchar(64) NULL,
+    [CorrelationId] nvarchar(64) NULL,
+    [BrowserInfo] nvarchar(512) NULL,
+    [HttpMethod] nvarchar(16) NULL,
+    [Url] nvarchar(256) NULL,
+    [Exceptions] nvarchar(max) NULL,
+    [Comments] nvarchar(256) NULL,
+    [HttpStatusCode] int NULL,
+    [ExtraProperties] nvarchar(max) NOT NULL,
+    [ConcurrencyStamp] nvarchar(40) NOT NULL,
+    CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY ([Id])
+);
+2025-07-10 21:51:00.192 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:51:00.831 +03:00 [INF] Started database migrations...
+2025-07-10 21:51:00.833 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:51:03.964 +03:00 [ERR] Failed executing DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [MyAppDb];
+2025-07-10 21:51:27.626 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:51:28.261 +03:00 [INF] Started database migrations...
+2025-07-10 21:51:28.263 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:51:31.296 +03:00 [ERR] Failed executing DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [MyAppDb];
+2025-07-10 21:52:11.441 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:52:12.083 +03:00 [INF] Started database migrations...
+2025-07-10 21:52:12.085 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:52:13.742 +03:00 [ERR] Failed executing DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AbpAuditLogs] (
+    [Id] uniqueidentifier NOT NULL,
+    [ApplicationName] nvarchar(96) NULL,
+    [UserId] uniqueidentifier NULL,
+    [UserName] nvarchar(256) NULL,
+    [TenantId] uniqueidentifier NULL,
+    [TenantName] nvarchar(64) NULL,
+    [ImpersonatorUserId] uniqueidentifier NULL,
+    [ImpersonatorUserName] nvarchar(256) NULL,
+    [ImpersonatorTenantId] uniqueidentifier NULL,
+    [ImpersonatorTenantName] nvarchar(64) NULL,
+    [ExecutionTime] datetime2 NOT NULL,
+    [ExecutionDuration] int NOT NULL,
+    [ClientIpAddress] nvarchar(64) NULL,
+    [ClientName] nvarchar(128) NULL,
+    [ClientId] nvarchar(64) NULL,
+    [CorrelationId] nvarchar(64) NULL,
+    [BrowserInfo] nvarchar(512) NULL,
+    [HttpMethod] nvarchar(16) NULL,
+    [Url] nvarchar(256) NULL,
+    [Exceptions] nvarchar(max) NULL,
+    [Comments] nvarchar(256) NULL,
+    [HttpStatusCode] int NULL,
+    [ExtraProperties] nvarchar(max) NOT NULL,
+    [ConcurrencyStamp] nvarchar(40) NOT NULL,
+    CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY ([Id])
+);
+2025-07-10 21:52:32.427 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:52:33.092 +03:00 [INF] Started database migrations...
+2025-07-10 21:52:33.095 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:52:36.171 +03:00 [ERR] Failed executing DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [MyAppDb];
+2025-07-10 21:53:37.667 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:53:38.301 +03:00 [INF] Started database migrations...
+2025-07-10 21:53:38.303 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:53:40.026 +03:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AbpAuditLogs] (
+    [Id] uniqueidentifier NOT NULL,
+    [ApplicationName] nvarchar(96) NULL,
+    [UserId] uniqueidentifier NULL,
+    [UserName] nvarchar(256) NULL,
+    [TenantId] uniqueidentifier NULL,
+    [TenantName] nvarchar(64) NULL,
+    [ImpersonatorUserId] uniqueidentifier NULL,
+    [ImpersonatorUserName] nvarchar(256) NULL,
+    [ImpersonatorTenantId] uniqueidentifier NULL,
+    [ImpersonatorTenantName] nvarchar(64) NULL,
+    [ExecutionTime] datetime2 NOT NULL,
+    [ExecutionDuration] int NOT NULL,
+    [ClientIpAddress] nvarchar(64) NULL,
+    [ClientName] nvarchar(128) NULL,
+    [ClientId] nvarchar(64) NULL,
+    [CorrelationId] nvarchar(64) NULL,
+    [BrowserInfo] nvarchar(512) NULL,
+    [HttpMethod] nvarchar(16) NULL,
+    [Url] nvarchar(256) NULL,
+    [Exceptions] nvarchar(max) NULL,
+    [Comments] nvarchar(256) NULL,
+    [HttpStatusCode] int NULL,
+    [ExtraProperties] nvarchar(max) NOT NULL,
+    [ConcurrencyStamp] nvarchar(40) NOT NULL,
+    CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY ([Id])
+);
+2025-07-10 21:56:03.021 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 21:56:03.665 +03:00 [INF] Started database migrations...
+2025-07-10 21:56:03.667 +03:00 [INF] Migrating schema for host database...
+2025-07-10 21:56:05.368 +03:00 [ERR] Failed executing DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AbpAuditLogs] (
+    [Id] uniqueidentifier NOT NULL,
+    [ApplicationName] nvarchar(96) NULL,
+    [UserId] uniqueidentifier NULL,
+    [UserName] nvarchar(256) NULL,
+    [TenantId] uniqueidentifier NULL,
+    [TenantName] nvarchar(64) NULL,
+    [ImpersonatorUserId] uniqueidentifier NULL,
+    [ImpersonatorUserName] nvarchar(256) NULL,
+    [ImpersonatorTenantId] uniqueidentifier NULL,
+    [ImpersonatorTenantName] nvarchar(64) NULL,
+    [ExecutionTime] datetime2 NOT NULL,
+    [ExecutionDuration] int NOT NULL,
+    [ClientIpAddress] nvarchar(64) NULL,
+    [ClientName] nvarchar(128) NULL,
+    [ClientId] nvarchar(64) NULL,
+    [CorrelationId] nvarchar(64) NULL,
+    [BrowserInfo] nvarchar(512) NULL,
+    [HttpMethod] nvarchar(16) NULL,
+    [Url] nvarchar(256) NULL,
+    [Exceptions] nvarchar(max) NULL,
+    [Comments] nvarchar(256) NULL,
+    [HttpStatusCode] int NULL,
+    [ExtraProperties] nvarchar(max) NOT NULL,
+    [ConcurrencyStamp] nvarchar(40) NOT NULL,
+    CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY ([Id])
+);
+2025-07-10 22:07:39.282 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 22:07:44.696 +03:00 [INF] Started database migrations...
+2025-07-10 22:07:44.697 +03:00 [INF] Migrating schema for host database...
+2025-07-10 22:07:46.127 +03:00 [INF] Executing host database seed...
+2025-07-10 22:07:48.482 +03:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RiskResponses] ([Id], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+2025-07-10 22:07:48.503 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskResponses' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:9aa45d72-e2a9-462c-b0e1-ca7b729a1ca8
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskResponses' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:9aa45d72-e2a9-462c-b0e1-ca7b729a1ca8
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Volo.Abp.EntityFrameworkCore.AbpDbContext`1.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Volo.Abp.Domain.Repositories.EntityFrameworkCore.EfCoreRepository`2.InsertAsync(TEntity entity, Boolean autoSave, CancellationToken cancellationToken)
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapterWithReturnValue`1.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+   at Volo.Abp.Castle.DynamicProxy.CastleAsyncAbpInterceptorAdapter`1.InterceptAsync[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo, Func`3 proceed)
+   at MyApiApp.Data.RiskResponseDataSeedContributor.SeedAsync(DataSeedContext context) in C:\Users\eslam\OneDrive\سطح المكتب\aspnet-core\src\MyApiApp.Domain\Data\RiskResponseDataSeedContributor.cs:line 36
+2025-07-10 22:12:36.606 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 22:12:41.463 +03:00 [INF] Started database migrations...
+2025-07-10 22:12:41.464 +03:00 [INF] Migrating schema for host database...
+2025-07-10 22:12:42.670 +03:00 [INF] Executing host database seed...
+2025-07-10 22:12:44.903 +03:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RiskStages] ([Id], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+2025-07-10 22:12:44.921 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'MyApiApp.EntityFrameworkCore.MyApiAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskStages' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cb2c81a1-4931-4c3c-8a0f-958b275981ea
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'RiskStages' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cb2c81a1-4931-4c3c-8a0f-958b275981ea
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Volo.Abp.EntityFrameworkCore.AbpDbContext`1.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Volo.Abp.Domain.Repositories.EntityFrameworkCore.EfCoreRepository`2.InsertAsync(TEntity entity, Boolean autoSave, CancellationToken cancellationToken)
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapterWithReturnValue`1.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+   at Volo.Abp.Castle.DynamicProxy.CastleAsyncAbpInterceptorAdapter`1.InterceptAsync[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo, Func`3 proceed)
+   at MyApiApp.Data.RiskStageDataSeedContributor.SeedAsync(DataSeedContext context) in C:\Users\eslam\OneDrive\سطح المكتب\aspnet-core\src\MyApiApp.Domain\Data\RiskStageDataSeedContributor.cs:line 37
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task, ConfigureAwaitOptions options)
+2025-07-10 22:14:40.486 +03:00 [INF] [DEBUG] Loaded connection string: Server=localhost\SQLEXPRESS;Database=MyAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;
+2025-07-10 22:14:41.179 +03:00 [INF] Started database migrations...
+2025-07-10 22:14:41.180 +03:00 [INF] Migrating schema for host database...
+2025-07-10 22:14:42.269 +03:00 [INF] Executing host database seed...
+2025-07-10 22:14:44.596 +03:00 [INF] Successfully completed host database migrations.
+2025-07-10 22:14:45.036 +03:00 [INF] Successfully completed all database migrations.
+2025-07-10 22:14:45.036 +03:00 [INF] You can safely end this process...
