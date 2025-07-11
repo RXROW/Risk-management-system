@@ -61,10 +61,21 @@ public class MyApiAppDbContext :
     public DbSet<RiskCategory> RiskCategories { get; set; }
     public DbSet<RiskStage> RiskStages { get; set; }
     public DbSet<RiskResponse> RiskResponses { get; set; }
+    public DbSet<RiskStatement> RiskStatements { get; set; }
 
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
+
+    public DbSet<Entity> Entities { get; set; }
+
+    public DbSet<FunctionalDomain> FunctionalDomains { get; set; }
+
+    public DbSet<DomainArea> DomainAreas { get; set; }
+
+    public DbSet<OwningGroup> OwningGroups { get; set; }
+
+    public DbSet<RiskAssessment> RiskAssessments { get; set; }
 
     #endregion
 
@@ -108,6 +119,44 @@ public class MyApiAppDbContext :
             b.HasOne(r => r.RiskResponse)
                 .WithMany()
                 .HasForeignKey(r => r.RiskResponseId)
+                .OnDelete(DeleteBehavior.Restrict);
+            b.HasOne(r => r.Entity)
+                .WithMany(e => e.Risks)
+                .HasForeignKey(r => r.EntityId)
+                .OnDelete(DeleteBehavior.Restrict);
+            b.HasOne(r => r.FunctionalDomain)
+                .WithMany()
+                .HasForeignKey(r => r.FunctionalDomainId)
+                .OnDelete(DeleteBehavior.Restrict);
+            b.HasOne(r => r.DomainArea)
+                .WithMany()
+                .HasForeignKey(r => r.DomainAreaId)
+                .OnDelete(DeleteBehavior.Restrict);
+            b.HasOne(r => r.RiskOwningGroup)
+                .WithMany()
+                .HasForeignKey(r => r.RiskOwningGroupId)
+                .OnDelete(DeleteBehavior.Restrict);
+            b.HasOne(r => r.RiskStatement)
+                .WithMany()
+                .HasForeignKey(r => r.RiskStatementId)
+                .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        builder.Entity<Entity>();
+
+        builder.Entity<DomainArea>(b =>
+        {
+            b.HasOne(d => d.FunctionalDomain)
+                .WithMany()
+                .HasForeignKey(d => d.FunctionalDomainId)
+                .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        builder.Entity<RiskAssessment>(b =>
+        {
+            b.HasOne(ra => ra.Risk)
+                .WithMany()
+                .HasForeignKey(ra => ra.RiskId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
     }

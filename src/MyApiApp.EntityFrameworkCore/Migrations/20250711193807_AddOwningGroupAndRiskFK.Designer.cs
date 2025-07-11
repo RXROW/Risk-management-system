@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyApiApp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace MyApiApp.Migrations
 {
     [DbContext(typeof(MyApiAppDbContext))]
-    partial class MyApiAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250711193807_AddOwningGroupAndRiskFK")]
+    partial class AddOwningGroupAndRiskFK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -261,36 +264,6 @@ namespace MyApiApp.Migrations
                     b.ToTable("OwningGroups");
                 });
 
-            modelBuilder.Entity("MyApiApp.Domain.RiskAssessment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("AssessedById")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("AssessmentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ImpactLevel")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LikelihoodLevel")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OverallRating")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("RiskId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RiskId");
-
-                    b.ToTable("RiskAssessments");
-                });
-
             modelBuilder.Entity("MyApiApp.Domain.RiskCategory", b =>
                 {
                     b.Property<Guid>("Id")
@@ -349,23 +322,6 @@ namespace MyApiApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RiskStages");
-                });
-
-            modelBuilder.Entity("MyApiApp.Domain.RiskStatement", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Statement")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RiskStatements");
                 });
 
             modelBuilder.Entity("Risk", b =>
@@ -461,9 +417,6 @@ namespace MyApiApp.Migrations
                     b.Property<int>("RiskStageId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("RiskStatementId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("RiskSubCategoryId")
                         .HasColumnType("uniqueidentifier");
 
@@ -485,8 +438,6 @@ namespace MyApiApp.Migrations
                     b.HasIndex("RiskResponseId");
 
                     b.HasIndex("RiskStageId");
-
-                    b.HasIndex("RiskStatementId");
 
                     b.ToTable("Risks");
                 });
@@ -2265,17 +2216,6 @@ namespace MyApiApp.Migrations
                     b.Navigation("FunctionalDomain");
                 });
 
-            modelBuilder.Entity("MyApiApp.Domain.RiskAssessment", b =>
-                {
-                    b.HasOne("Risk", "Risk")
-                        .WithMany()
-                        .HasForeignKey("RiskId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Risk");
-                });
-
             modelBuilder.Entity("Risk", b =>
                 {
                     b.HasOne("MyApiApp.Domain.DomainArea", "DomainArea")
@@ -2320,12 +2260,6 @@ namespace MyApiApp.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MyApiApp.Domain.RiskStatement", "RiskStatement")
-                        .WithMany()
-                        .HasForeignKey("RiskStatementId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("DomainArea");
 
                     b.Navigation("Entity");
@@ -2339,8 +2273,6 @@ namespace MyApiApp.Migrations
                     b.Navigation("RiskResponse");
 
                     b.Navigation("RiskStage");
-
-                    b.Navigation("RiskStatement");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>

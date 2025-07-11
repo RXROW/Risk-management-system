@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyApiApp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace MyApiApp.Migrations
 {
     [DbContext(typeof(MyApiAppDbContext))]
-    partial class MyApiAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250711184203_AddFunctionalDomainAndRiskFK")]
+    partial class AddFunctionalDomainAndRiskFK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,29 +158,6 @@ namespace MyApiApp.Migrations
                     b.ToTable("Products", (string)null);
                 });
 
-            modelBuilder.Entity("MyApiApp.Domain.DomainArea", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("FunctionalDomainId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FunctionalDomainId");
-
-                    b.ToTable("DomainAreas");
-                });
-
             modelBuilder.Entity("MyApiApp.Domain.Entity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -232,6 +212,7 @@ namespace MyApiApp.Migrations
             modelBuilder.Entity("MyApiApp.Domain.FunctionalDomain", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -245,50 +226,6 @@ namespace MyApiApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FunctionalDomains");
-                });
-
-            modelBuilder.Entity("MyApiApp.Domain.OwningGroup", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OwningGroups");
-                });
-
-            modelBuilder.Entity("MyApiApp.Domain.RiskAssessment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("AssessedById")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("AssessmentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ImpactLevel")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LikelihoodLevel")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OverallRating")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("RiskId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RiskId");
-
-                    b.ToTable("RiskAssessments");
                 });
 
             modelBuilder.Entity("MyApiApp.Domain.RiskCategory", b =>
@@ -351,23 +288,6 @@ namespace MyApiApp.Migrations
                     b.ToTable("RiskStages");
                 });
 
-            modelBuilder.Entity("MyApiApp.Domain.RiskStatement", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Statement")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RiskStatements");
-                });
-
             modelBuilder.Entity("Risk", b =>
                 {
                     b.Property<Guid>("Id")
@@ -395,9 +315,6 @@ namespace MyApiApp.Migrations
                     b.Property<DateTime?>("DeletionTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletionTime");
-
-                    b.Property<Guid>("DomainAreaId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("EntityId")
                         .HasColumnType("uniqueidentifier");
@@ -449,9 +366,6 @@ namespace MyApiApp.Migrations
                     b.Property<Guid>("RiskOwnerId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("RiskOwningGroupId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("RiskResponseId")
                         .HasColumnType("int");
 
@@ -461,9 +375,6 @@ namespace MyApiApp.Migrations
                     b.Property<int>("RiskStageId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("RiskStatementId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("RiskSubCategoryId")
                         .HasColumnType("uniqueidentifier");
 
@@ -472,21 +383,15 @@ namespace MyApiApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DomainAreaId");
-
                     b.HasIndex("EntityId");
 
                     b.HasIndex("FunctionalDomainId");
 
                     b.HasIndex("RiskCategoryId");
 
-                    b.HasIndex("RiskOwningGroupId");
-
                     b.HasIndex("RiskResponseId");
 
                     b.HasIndex("RiskStageId");
-
-                    b.HasIndex("RiskStatementId");
 
                     b.ToTable("Risks");
                 });
@@ -2254,36 +2159,8 @@ namespace MyApiApp.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("MyApiApp.Domain.DomainArea", b =>
-                {
-                    b.HasOne("MyApiApp.Domain.FunctionalDomain", "FunctionalDomain")
-                        .WithMany()
-                        .HasForeignKey("FunctionalDomainId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("FunctionalDomain");
-                });
-
-            modelBuilder.Entity("MyApiApp.Domain.RiskAssessment", b =>
-                {
-                    b.HasOne("Risk", "Risk")
-                        .WithMany()
-                        .HasForeignKey("RiskId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Risk");
-                });
-
             modelBuilder.Entity("Risk", b =>
                 {
-                    b.HasOne("MyApiApp.Domain.DomainArea", "DomainArea")
-                        .WithMany()
-                        .HasForeignKey("DomainAreaId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("MyApiApp.Domain.Entity", "Entity")
                         .WithMany("Risks")
                         .HasForeignKey("EntityId")
@@ -2302,12 +2179,6 @@ namespace MyApiApp.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MyApiApp.Domain.OwningGroup", "RiskOwningGroup")
-                        .WithMany()
-                        .HasForeignKey("RiskOwningGroupId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("MyApiApp.Domain.RiskResponse", "RiskResponse")
                         .WithMany()
                         .HasForeignKey("RiskResponseId")
@@ -2320,27 +2191,15 @@ namespace MyApiApp.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MyApiApp.Domain.RiskStatement", "RiskStatement")
-                        .WithMany()
-                        .HasForeignKey("RiskStatementId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("DomainArea");
-
                     b.Navigation("Entity");
 
                     b.Navigation("FunctionalDomain");
 
                     b.Navigation("RiskCategory");
 
-                    b.Navigation("RiskOwningGroup");
-
                     b.Navigation("RiskResponse");
 
                     b.Navigation("RiskStage");
-
-                    b.Navigation("RiskStatement");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>

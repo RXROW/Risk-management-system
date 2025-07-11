@@ -22,5 +22,7 @@ public class MyApiAppApplicationAutoMapperProfile : Profile
         CreateMap<MyApiApp.Application.Contracts.RiskStage.CreateUpdateRiskStageDto, MyApiApp.Domain.RiskStage>();
         CreateMap<MyApiApp.Domain.RiskResponse, MyApiApp.Application.Contracts.RiskResponse.RiskResponseDto>();
         CreateMap<MyApiApp.Application.Contracts.RiskResponse.CreateUpdateRiskResponseDto, MyApiApp.Domain.RiskResponse>();
+        CreateMap<MyApiApp.Domain.Entity, EntityDto>();
+        CreateMap<CreateUpdateEntityDto, MyApiApp.Domain.Entity>();
     }
 }
