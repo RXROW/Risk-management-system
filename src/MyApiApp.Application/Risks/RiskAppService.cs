@@ -4,16 +4,23 @@ using System.Threading.Tasks;
 using MyApiApp.Risks;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
+using MyApiApp.Domain;
+using MyApiApp.Domain.Risks;
+using MyApiApp.Application.Contracts.Risks;
+using Volo.Abp;
 
 namespace MyApiApp.Risks
 {
-    public class RiskAppService : ApplicationService
+    [RemoteService(false)]
+    public class RiskAppService : ApplicationService, IRiskAppService
     {
         private readonly IRepository<Risk, Guid> _riskRepository;
+        private readonly IRiskRepository _riskRepositoryWithDetails;
 
-        public RiskAppService(IRepository<Risk, Guid> riskRepository)
+        public RiskAppService(IRepository<Risk, Guid> riskRepository, IRiskRepository riskRepositoryWithDetails)
         {
             _riskRepository = riskRepository;
+            _riskRepositoryWithDetails = riskRepositoryWithDetails;
         }
 
         public async Task<RiskDto> GetAsync(Guid id)
@@ -22,10 +29,22 @@ namespace MyApiApp.Risks
             return ObjectMapper.Map<Risk, RiskDto>(risk);
         }
 
+        public async Task<RiskWithDetailsDto> GetWithDetailsAsync(Guid id)
+        {
+            var risk = await _riskRepositoryWithDetails.GetWithDetailsAsync(id);
+            return ObjectMapper.Map<Risk, RiskWithDetailsDto>(risk);
+        }
+
         public async Task<List<RiskDto>> GetListAsync()
         {
             var risks = await _riskRepository.GetListAsync();
             return ObjectMapper.Map<List<Risk>, List<RiskDto>>(risks);
+        }
+
+        public async Task<List<RiskWithDetailsDto>> GetListWithDetailsAsync()
+        {
+            var risks = await _riskRepositoryWithDetails.GetListWithDetailsAsync();
+            return ObjectMapper.Map<List<Risk>, List<RiskWithDetailsDto>>(risks);
         }
 
         public async Task<RiskDto> CreateAsync(CreateUpdateRiskDto input)

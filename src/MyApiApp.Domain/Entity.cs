@@ -1,6 +1,7 @@
 using Volo.Abp.Domain.Entities.Auditing;
 using System;
 using System.Collections.Generic;
+using MyApiApp.Domain.Risks;
 
 namespace MyApiApp.Domain
 {

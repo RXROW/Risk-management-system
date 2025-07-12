@@ -12,6 +12,7 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using MyApiApp.Domain.Risks;
 
 namespace MyApiApp.EntityFrameworkCore;
 
@@ -42,6 +43,9 @@ public class MyApiAppEntityFrameworkCoreModule : AbpModule
                  * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
         });
+
+        // Register custom repository
+        context.Services.AddTransient<IRiskRepository, RiskRepository>();
 
         Configure<AbpDbContextOptions>(options =>
         {

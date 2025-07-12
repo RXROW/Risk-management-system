@@ -16,6 +16,7 @@ using MyApiApp.Configurations;
 using ABPCourse.Demo1.Categories;
 using ABPCourse.Demo1.Products;
 using MyApiApp.Domain;
+using MyApiApp.Domain.Risks;
 
 namespace MyApiApp.EntityFrameworkCore;
 

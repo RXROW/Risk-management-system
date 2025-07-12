@@ -1,6 +1,7 @@
 using Volo.Abp.Domain.Entities;
 using System;
 using MyApiApp.Domain.Shared;
+using MyApiApp.Domain.Risks;
 
 namespace MyApiApp.Domain
 {
