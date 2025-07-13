@@ -17,9 +17,9 @@ namespace MyApiApp.Domain.Risks
         public DomainArea DomainArea { get; set; }
         public Guid RiskCategoryId { get; set; }
         public RiskCategory RiskCategory { get; set; }
-        public int RiskResponseId { get; set; }
+        public Guid RiskResponseId { get; set; }
         public RiskResponse RiskResponse { get; set; }
-        public int RiskStageId { get; set; }
+        public Guid RiskStageId { get; set; }
         public RiskStage RiskStage { get; set; }
         public Guid? RiskStatementId { get; set; }
         public RiskStatement RiskStatement { get; set; }

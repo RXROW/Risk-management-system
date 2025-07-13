@@ -9,10 +9,10 @@ namespace MyApiApp.Application.RiskStage
     public class RiskStageAppService : ReadOnlyAppService<
         MyApiApp.Domain.RiskStage,
         RiskStageDto,
-        int,
+        Guid,
         Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>, IRiskStageAppService
     {
-        public RiskStageAppService(IRepository<MyApiApp.Domain.RiskStage, int> repository)
+        public RiskStageAppService(IRepository<MyApiApp.Domain.RiskStage, Guid> repository)
             : base(repository)
         {
         }

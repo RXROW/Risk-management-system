@@ -3,14 +3,15 @@ using MyApiApp.Domain;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
+using System;
 
 namespace MyApiApp.Data
 {
     public class RiskStageDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
-        private readonly IRepository<RiskStage, int> _riskStageRepository;
+        private readonly IRepository<RiskStage, Guid> _riskStageRepository;
 
-        public RiskStageDataSeedContributor(IRepository<RiskStage, int> riskStageRepository)
+        public RiskStageDataSeedContributor(IRepository<RiskStage, Guid> riskStageRepository)
         {
             _riskStageRepository = riskStageRepository;
         }
@@ -34,6 +35,7 @@ namespace MyApiApp.Data
 
             foreach (var stage in stages)
             {
+                stage.Id = Guid.NewGuid();
                 await _riskStageRepository.InsertAsync(stage, autoSave: true);
             }
         }

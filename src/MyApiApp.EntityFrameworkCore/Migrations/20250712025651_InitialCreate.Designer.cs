@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace MyApiApp.Migrations
 {
     [DbContext(typeof(MyApiAppDbContext))]
-    [Migration("20250711195610_AddRiskStatementAndRiskFK")]
-    partial class AddRiskStatementAndRiskFK
+    [Migration("20250712025651_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -264,6 +264,36 @@ namespace MyApiApp.Migrations
                     b.ToTable("OwningGroups");
                 });
 
+            modelBuilder.Entity("MyApiApp.Domain.RiskAssessment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AssessedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AssessmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ImpactLevel")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LikelihoodLevel")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OverallRating")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("RiskId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RiskId");
+
+                    b.ToTable("RiskAssessments");
+                });
+
             modelBuilder.Entity("MyApiApp.Domain.RiskCategory", b =>
                 {
                     b.Property<Guid>("Id")
@@ -284,11 +314,8 @@ namespace MyApiApp.Migrations
 
             modelBuilder.Entity("MyApiApp.Domain.RiskResponse", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -305,11 +332,8 @@ namespace MyApiApp.Migrations
 
             modelBuilder.Entity("MyApiApp.Domain.RiskStage", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -341,7 +365,7 @@ namespace MyApiApp.Migrations
                     b.ToTable("RiskStatements");
                 });
 
-            modelBuilder.Entity("Risk", b =>
+            modelBuilder.Entity("MyApiApp.Domain.Risks.Risk", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -350,8 +374,8 @@ namespace MyApiApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ControlEffectivenessId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2")
@@ -382,9 +406,6 @@ namespace MyApiApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("InherentRiskRatingId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -392,6 +413,9 @@ namespace MyApiApp.Migrations
                         .HasColumnName("IsDeleted");
 
                     b.Property<bool>("IsInheritFromRiskStatement")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSyncWithEntityOwner")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastModificationTime")
@@ -402,14 +426,12 @@ namespace MyApiApp.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("LastModifierId");
 
-                    b.Property<Guid>("ResidualRiskRatingId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("RiskCategoryId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("RiskDriverId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("RiskDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RiskId")
                         .IsRequired()
@@ -419,29 +441,24 @@ namespace MyApiApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("RiskOwnerId")
+                    b.Property<Guid?>("RiskOwnerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("RiskOwningGroupId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("RiskResponseId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("RiskSourceId")
+                    b.Property<Guid>("RiskResponseId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("RiskStageId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("RiskStatementId")
+                    b.Property<Guid>("RiskStageId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("RiskSubCategoryId")
+                    b.Property<Guid?>("RiskStatementId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("RiskTypeId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -2238,7 +2255,18 @@ namespace MyApiApp.Migrations
                     b.Navigation("FunctionalDomain");
                 });
 
-            modelBuilder.Entity("Risk", b =>
+            modelBuilder.Entity("MyApiApp.Domain.RiskAssessment", b =>
+                {
+                    b.HasOne("MyApiApp.Domain.Risks.Risk", "Risk")
+                        .WithMany()
+                        .HasForeignKey("RiskId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Risk");
+                });
+
+            modelBuilder.Entity("MyApiApp.Domain.Risks.Risk", b =>
                 {
                     b.HasOne("MyApiApp.Domain.DomainArea", "DomainArea")
                         .WithMany()
@@ -2285,8 +2313,7 @@ namespace MyApiApp.Migrations
                     b.HasOne("MyApiApp.Domain.RiskStatement", "RiskStatement")
                         .WithMany()
                         .HasForeignKey("RiskStatementId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("DomainArea");
 

@@ -6,7 +6,7 @@ namespace MyApiApp.Application.RiskStage
 {
     public interface IRiskStageAppService : IReadOnlyAppService<
         RiskStageDto,
-        int,
+        Guid,
         Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>
     {
     }

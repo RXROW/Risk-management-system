@@ -439,6 +439,40 @@ namespace MyApiApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Entities",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OwnerId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    LastModificationTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    DeleterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DeletionTime = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Entities", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FunctionalDomains",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FunctionalDomains", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "OpenIddictApplications",
                 columns: table => new
                 {
@@ -502,6 +536,18 @@ namespace MyApiApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "OwningGroups",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OwningGroups", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "RiskCategories",
                 columns: table => new
                 {
@@ -518,8 +564,7 @@ namespace MyApiApp.Migrations
                 name: "RiskResponses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -532,14 +577,26 @@ namespace MyApiApp.Migrations
                 name: "RiskStages",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RiskStages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RiskStatements",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Statement = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RiskStatements", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -805,6 +862,26 @@ namespace MyApiApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DomainAreas",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FunctionalDomainId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DomainAreas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DomainAreas_FunctionalDomains_FunctionalDomainId",
+                        column: x => x.FunctionalDomainId,
+                        principalTable: "FunctionalDomains",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "OpenIddictAuthorizations",
                 columns: table => new
                 {
@@ -830,59 +907,6 @@ namespace MyApiApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Risks",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RiskId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RiskName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RiskStageId = table.Column<int>(type: "int", nullable: false),
-                    IsInheritFromRiskStatement = table.Column<bool>(type: "bit", nullable: false),
-                    RiskSourceId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RiskTypeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RiskCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RiskSubCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RiskOwnerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RiskDriverId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Cause = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Impact = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    InherentRiskRatingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ResidualRiskRatingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ControlEffectivenessId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RiskResponseId = table.Column<int>(type: "int", nullable: false),
-                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    LastModificationTime = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    DeleterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    DeletionTime = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Risks", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Risks_RiskCategories_RiskCategoryId",
-                        column: x => x.RiskCategoryId,
-                        principalTable: "RiskCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Risks_RiskResponses_RiskResponseId",
-                        column: x => x.RiskResponseId,
-                        principalTable: "RiskResponses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Risks_RiskStages_RiskStageId",
-                        column: x => x.RiskStageId,
-                        principalTable: "RiskStages",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AbpEntityPropertyChanges",
                 columns: table => new
                 {
@@ -903,6 +927,90 @@ namespace MyApiApp.Migrations
                         principalTable: "AbpEntityChanges",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Risks",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RiskId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RiskName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RiskDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FunctionalDomainId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DomainAreaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RiskCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RiskResponseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RiskStageId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RiskStatementId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    RiskOwningGroupId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RiskOwnerId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    IsInheritFromRiskStatement = table.Column<bool>(type: "bit", nullable: false),
+                    IsSyncWithEntityOwner = table.Column<bool>(type: "bit", nullable: false),
+                    Cause = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Impact = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    LastModificationTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    DeleterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DeletionTime = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Risks", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Risks_DomainAreas_DomainAreaId",
+                        column: x => x.DomainAreaId,
+                        principalTable: "DomainAreas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Risks_Entities_EntityId",
+                        column: x => x.EntityId,
+                        principalTable: "Entities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Risks_FunctionalDomains_FunctionalDomainId",
+                        column: x => x.FunctionalDomainId,
+                        principalTable: "FunctionalDomains",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Risks_OwningGroups_RiskOwningGroupId",
+                        column: x => x.RiskOwningGroupId,
+                        principalTable: "OwningGroups",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Risks_RiskCategories_RiskCategoryId",
+                        column: x => x.RiskCategoryId,
+                        principalTable: "RiskCategories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Risks_RiskResponses_RiskResponseId",
+                        column: x => x.RiskResponseId,
+                        principalTable: "RiskResponses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Risks_RiskStages_RiskStageId",
+                        column: x => x.RiskStageId,
+                        principalTable: "RiskStages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Risks_RiskStatements_RiskStatementId",
+                        column: x => x.RiskStatementId,
+                        principalTable: "RiskStatements",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -937,6 +1045,29 @@ namespace MyApiApp.Migrations
                         column: x => x.AuthorizationId,
                         principalTable: "OpenIddictAuthorizations",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RiskAssessments",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AssessmentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LikelihoodLevel = table.Column<int>(type: "int", nullable: false),
+                    ImpactLevel = table.Column<int>(type: "int", nullable: false),
+                    OverallRating = table.Column<int>(type: "int", nullable: false),
+                    AssessedById = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    RiskId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RiskAssessments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RiskAssessments_Risks_RiskId",
+                        column: x => x.RiskId,
+                        principalTable: "Risks",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -1158,6 +1289,11 @@ namespace MyApiApp.Migrations
                 column: "UserName");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DomainAreas_FunctionalDomainId",
+                table: "DomainAreas",
+                column: "FunctionalDomainId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_OpenIddictApplications_ClientId",
                 table: "OpenIddictApplications",
                 column: "ClientId");
@@ -1193,9 +1329,34 @@ namespace MyApiApp.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_RiskAssessments_RiskId",
+                table: "RiskAssessments",
+                column: "RiskId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Risks_DomainAreaId",
+                table: "Risks",
+                column: "DomainAreaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Risks_EntityId",
+                table: "Risks",
+                column: "EntityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Risks_FunctionalDomainId",
+                table: "Risks",
+                column: "FunctionalDomainId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Risks_RiskCategoryId",
                 table: "Risks",
                 column: "RiskCategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Risks_RiskOwningGroupId",
+                table: "Risks",
+                column: "RiskOwningGroupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Risks_RiskResponseId",
@@ -1206,6 +1367,11 @@ namespace MyApiApp.Migrations
                 name: "IX_Risks_RiskStageId",
                 table: "Risks",
                 column: "RiskStageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Risks_RiskStatementId",
+                table: "Risks",
+                column: "RiskStatementId");
         }
 
         /// <inheritdoc />
@@ -1293,7 +1459,7 @@ namespace MyApiApp.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "Risks");
+                name: "RiskAssessments");
 
             migrationBuilder.DropTable(
                 name: "AbpEntityChanges");
@@ -1317,6 +1483,24 @@ namespace MyApiApp.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
+                name: "Risks");
+
+            migrationBuilder.DropTable(
+                name: "AbpAuditLogs");
+
+            migrationBuilder.DropTable(
+                name: "OpenIddictApplications");
+
+            migrationBuilder.DropTable(
+                name: "DomainAreas");
+
+            migrationBuilder.DropTable(
+                name: "Entities");
+
+            migrationBuilder.DropTable(
+                name: "OwningGroups");
+
+            migrationBuilder.DropTable(
                 name: "RiskCategories");
 
             migrationBuilder.DropTable(
@@ -1326,10 +1510,10 @@ namespace MyApiApp.Migrations
                 name: "RiskStages");
 
             migrationBuilder.DropTable(
-                name: "AbpAuditLogs");
+                name: "RiskStatements");
 
             migrationBuilder.DropTable(
-                name: "OpenIddictApplications");
+                name: "FunctionalDomains");
         }
     }
 }

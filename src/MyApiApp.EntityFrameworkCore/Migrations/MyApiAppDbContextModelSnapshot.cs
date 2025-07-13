@@ -19,7 +19,7 @@ namespace MyApiApp.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.SqlServer)
-                .HasAnnotation("ProductVersion", "9.0.6")
+                .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -201,7 +201,8 @@ namespace MyApiApp.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -219,14 +220,15 @@ namespace MyApiApp.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<Guid?>("OwnerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Entities");
+                    b.ToTable("Entities", (string)null);
                 });
 
             modelBuilder.Entity("MyApiApp.Domain.FunctionalDomain", b =>
@@ -311,11 +313,8 @@ namespace MyApiApp.Migrations
 
             modelBuilder.Entity("MyApiApp.Domain.RiskResponse", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -332,11 +331,8 @@ namespace MyApiApp.Migrations
 
             modelBuilder.Entity("MyApiApp.Domain.RiskStage", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -450,11 +446,11 @@ namespace MyApiApp.Migrations
                     b.Property<Guid>("RiskOwningGroupId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("RiskResponseId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RiskResponseId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("RiskStageId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RiskStageId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("RiskStatementId")
                         .HasColumnType("uniqueidentifier");

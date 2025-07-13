@@ -4,11 +4,10 @@ using MyApiApp.Application.Contracts.RiskResponse;
 
 namespace MyApiApp.Application.RiskResponse
 {
-    public interface IRiskResponseAppService : ICrudAppService<
+    public interface IRiskResponseAppService : IReadOnlyAppService<
         RiskResponseDto,
-        int,
-        Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto,
-        CreateUpdateRiskResponseDto>
+        Guid,
+        Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>
     {
     }
 } 

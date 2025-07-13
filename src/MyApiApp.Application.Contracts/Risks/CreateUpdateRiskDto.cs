@@ -11,8 +11,8 @@ namespace MyApiApp.Application.Contracts.Risks
         public Guid FunctionalDomainId { get; set; }
         public Guid DomainAreaId { get; set; }
         public Guid RiskCategoryId { get; set; }
-        public int RiskResponseId { get; set; }
-        public int RiskStageId { get; set; }
+        public Guid RiskResponseId { get; set; }
+        public Guid RiskStageId { get; set; }
         public Guid? RiskStatementId { get; set; }
         public Guid RiskOwningGroupId { get; set; }
         public Guid? RiskOwnerId { get; set; }

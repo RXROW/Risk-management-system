@@ -103,6 +103,7 @@ public class MyApiAppDbContext :
 
         builder.ApplyConfiguration(new CategoryConfiguration());
         builder.ApplyConfiguration(new ProductConfiguration()); 
+        builder.ApplyConfiguration(new EntityConfiguration());
         builder.Entity<RiskCategory>();
         builder.Entity<RiskStage>();
         builder.Entity<RiskResponse>();
@@ -143,7 +144,7 @@ public class MyApiAppDbContext :
                 .OnDelete(DeleteBehavior.Restrict);
         });
 
-        builder.Entity<Entity>();
+        // Entity is configured via EntityConfiguration class
 
         builder.Entity<DomainArea>(b =>
         {

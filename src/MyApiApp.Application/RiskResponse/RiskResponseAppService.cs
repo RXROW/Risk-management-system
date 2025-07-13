@@ -6,14 +6,13 @@ using System;
 
 namespace MyApiApp.Application.RiskResponse
 {
-    public class RiskResponseAppService : CrudAppService<
+    public class RiskResponseAppService : ReadOnlyAppService<
         MyApiApp.Domain.RiskResponse,
         RiskResponseDto,
-        int,
-        Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto,
-        CreateUpdateRiskResponseDto>, IRiskResponseAppService
+        Guid,
+        Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>, IRiskResponseAppService
     {
-        public RiskResponseAppService(IRepository<MyApiApp.Domain.RiskResponse, int> repository)
+        public RiskResponseAppService(IRepository<MyApiApp.Domain.RiskResponse, Guid> repository)
             : base(repository)
         {
         }

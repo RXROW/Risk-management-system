@@ -30,12 +30,12 @@ namespace MyApiApp.Application.Contracts.Risks
         public string RiskCategoryDescription { get; set; }
         
         // Risk Response details
-        public int RiskResponseId { get; set; }
+        public Guid RiskResponseId { get; set; }
         public string RiskResponseName { get; set; }
         public string RiskResponseDescription { get; set; }
         
         // Risk Stage details
-        public int RiskStageId { get; set; }
+        public Guid RiskStageId { get; set; }
         public string RiskStageName { get; set; }
         public string RiskStageDescription { get; set; }
         

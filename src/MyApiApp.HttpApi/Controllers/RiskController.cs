@@ -42,13 +42,13 @@ namespace MyApiApp.HttpApi.Controllers
         }
 
         [HttpPost]
-        public async Task<RiskDto> CreateAsync(CreateUpdateRiskDto input)
+        public async Task<RiskDto> CreateAsync([FromBody] CreateUpdateRiskDto input)
         {
             return await _riskAppService.CreateAsync(input);
         }
 
         [HttpPut("{id}")]
-        public async Task<RiskDto> UpdateAsync(Guid id, CreateUpdateRiskDto input)
+        public async Task<RiskDto> UpdateAsync(Guid id, [FromBody] CreateUpdateRiskDto input)
         {
             return await _riskAppService.UpdateAsync(id, input);
         }
